@@ -15,6 +15,18 @@ namespace TicketingBrosMP
     {
 
         /// <summary>
+<<<<<<< HEAD
+=======
+        /// pnlNowShowing control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel pnlNowShowing;
+
+        /// <summary>
+>>>>>>> 1b8cdc045b16b66973df527adcd1cfedf24da153
         /// rptNowShowing control.
         /// </summary>
         /// <remarks>
@@ -24,6 +36,27 @@ namespace TicketingBrosMP
         protected global::System.Web.UI.WebControls.Repeater rptNowShowing;
 
         /// <summary>
+<<<<<<< HEAD
+=======
+        /// pnlNoNowShowing control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel pnlNoNowShowing;
+
+        /// <summary>
+        /// pnlUpcoming control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel pnlUpcoming;
+
+        /// <summary>
+>>>>>>> 1b8cdc045b16b66973df527adcd1cfedf24da153
         /// rptUpcomingMovies control.
         /// </summary>
         /// <remarks>
@@ -31,5 +64,17 @@ namespace TicketingBrosMP
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Repeater rptUpcomingMovies;
+<<<<<<< HEAD
+=======
+
+        /// <summary>
+        /// pnlNoUpcoming control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel pnlNoUpcoming;
+>>>>>>> 1b8cdc045b16b66973df527adcd1cfedf24da153
     }
 }

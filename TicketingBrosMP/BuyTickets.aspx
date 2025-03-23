@@ -218,8 +218,14 @@
                         <div class="summary-section mt-3 text-center">
                             <h4>Selected Seats: <span id="selectedSeats_<%# Eval("ID") %>">None</span></h4>
                             <h4>Total Price: ₱<span id="totalPrice_<%# Eval("ID") %>">0</span></h4>
+<<<<<<< HEAD
                             <asp:HiddenField ID="hfMovieTitle" runat="server" Value='<%# Eval("Title") %>' />
                             <asp:Button ID="btnBuyNow" runat="server" Text="Buy Now" CssClass="btn btn-primary mt-3" OnClick="btnBuyNow_Click" CommandArgument='<%# Eval("ID") %>' />
+=======
+                            
+                            <asp:HiddenField ID="hfMovieTitle" runat="server" Value='<%# Eval("Title") %>' />
+                            <asp:Button ID="btnProceedToCheckout" runat="server" Text="Proceed to Checkout" CssClass="btn btn-primary mt-3" OnClick="btnProceedToCheckout_Click" CommandArgument='<%# Eval("ID") %>' />
+>>>>>>> 1b8cdc045b16b66973df527adcd1cfedf24da153
                         </div>
                     </div>
                 </div>

@@ -69,26 +69,51 @@
   <ItemGroup>
     <Content Include="about us.aspx" />
     <Content Include="App_Data\TicketingBros.mdb" />
+<<<<<<< HEAD
     <Content Include="BuyTickets.aspx" />
     <Content Include="CancelReservation.aspx" />
     <Content Include="Contact us.aspx" />
     <Content Include="Home.aspx" />
+=======
+    <Content Include="BookingConfirmation.aspx" />
+    <Content Include="BuyTickets.aspx" />
+    <Content Include="BuyTickets2.aspx" />
+    <Content Include="CancelReservation.aspx" />
+    <Content Include="Checkout.aspx" />
+    <Content Include="Contact us.aspx" />
+    <Content Include="Home.aspx" />
+    <Content Include="MyBookings.aspx" />
+>>>>>>> 1b8cdc045b16b66973df527adcd1cfedf24da153
     <Content Include="nowshowing.aspx" />
     <Content Include="Picture\1917.png" />
     <Content Include="Picture\chapman.png" />
     <Content Include="Picture\damson.png" />
     <Content Include="Picture\f1.png" />
     <Content Include="Picture\george.png" />
+<<<<<<< HEAD
+=======
+    <Content Include="Picture\herobanner.png" />
+>>>>>>> 1b8cdc045b16b66973df527adcd1cfedf24da153
     <Content Include="Picture\joaquin.png" />
     <Content Include="Picture\joker.png" />
     <Content Include="Picture\lady.png" />
     <Content Include="Picture\logo.png" />
+<<<<<<< HEAD
     <Content Include="Picture\password.png" />
+=======
+    <Content Include="Picture\mastercard-logo.png" />
+    <Content Include="Picture\password.png" />
+    <Content Include="Picture\qrcode.png" />
+>>>>>>> 1b8cdc045b16b66973df527adcd1cfedf24da153
     <Content Include="Picture\sonny.png" />
     <Content Include="Picture\spidey.png" />
     <Content Include="Picture\tom.png" />
     <Content Include="Picture\user.png" />
     <Content Include="Picture\zen.png" />
+<<<<<<< HEAD
+=======
+    <Content Include="PrintableReceipt.aspx" />
+>>>>>>> 1b8cdc045b16b66973df527adcd1cfedf24da153
     <Content Include="signup.aspx" />
     <Content Include="upcoming.aspx" />
     <Content Include="Web.config" />
@@ -101,6 +126,16 @@
     <Compile Include="about us.aspx.designer.cs">
       <DependentUpon>about us.aspx</DependentUpon>
     </Compile>
+<<<<<<< HEAD
+=======
+    <Compile Include="BookingConfirmation.aspx.cs">
+      <DependentUpon>BookingConfirmation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BookingConfirmation.aspx.designer.cs">
+      <DependentUpon>BookingConfirmation.aspx</DependentUpon>
+    </Compile>
+>>>>>>> 1b8cdc045b16b66973df527adcd1cfedf24da153
     <Compile Include="BuyTickets.aspx.cs">
       <DependentUpon>BuyTickets.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -108,6 +143,16 @@
     <Compile Include="BuyTickets.aspx.designer.cs">
       <DependentUpon>BuyTickets.aspx</DependentUpon>
     </Compile>
+<<<<<<< HEAD
+=======
+    <Compile Include="BuyTickets2.aspx.cs">
+      <DependentUpon>BuyTickets2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BuyTickets2.aspx.designer.cs">
+      <DependentUpon>BuyTickets2.aspx</DependentUpon>
+    </Compile>
+>>>>>>> 1b8cdc045b16b66973df527adcd1cfedf24da153
     <Compile Include="CancelReservation.aspx.cs">
       <DependentUpon>CancelReservation.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -115,6 +160,16 @@
     <Compile Include="CancelReservation.aspx.designer.cs">
       <DependentUpon>CancelReservation.aspx</DependentUpon>
     </Compile>
+<<<<<<< HEAD
+=======
+    <Compile Include="Checkout.aspx.cs">
+      <DependentUpon>Checkout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Checkout.aspx.designer.cs">
+      <DependentUpon>Checkout.aspx</DependentUpon>
+    </Compile>
+>>>>>>> 1b8cdc045b16b66973df527adcd1cfedf24da153
     <Compile Include="Contact us.aspx.cs">
       <DependentUpon>Contact us.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -136,6 +191,16 @@
     <Compile Include="MasterPage.Master.designer.cs">
       <DependentUpon>MasterPage.Master</DependentUpon>
     </Compile>
+<<<<<<< HEAD
+=======
+    <Compile Include="MyBookings.aspx.cs">
+      <DependentUpon>MyBookings.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MyBookings.aspx.designer.cs">
+      <DependentUpon>MyBookings.aspx</DependentUpon>
+    </Compile>
+>>>>>>> 1b8cdc045b16b66973df527adcd1cfedf24da153
     <Compile Include="nowshowing.aspx.cs">
       <DependentUpon>nowshowing.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -143,6 +208,16 @@
     <Compile Include="nowshowing.aspx.designer.cs">
       <DependentUpon>nowshowing.aspx</DependentUpon>
     </Compile>
+<<<<<<< HEAD
+=======
+    <Compile Include="PrintableReceipt.aspx.cs">
+      <DependentUpon>PrintableReceipt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PrintableReceipt.aspx.designer.cs">
+      <DependentUpon>PrintableReceipt.aspx</DependentUpon>
+    </Compile>
+>>>>>>> 1b8cdc045b16b66973df527adcd1cfedf24da153
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="signup.aspx.cs">
       <DependentUpon>signup.aspx</DependentUpon>

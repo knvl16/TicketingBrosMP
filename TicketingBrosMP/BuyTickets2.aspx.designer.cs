@@ -11,28 +11,16 @@ namespace TicketingBrosMP
 {
 
 
-    public partial class nowshowing
+    public partial class BuyTickets2
     {
 
         /// <summary>
-        /// rptMovies control.
+        /// rptMovieList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rptMovies;
-<<<<<<< HEAD
-=======
-
-        /// <summary>
-        /// pnlNoMovies control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel pnlNoMovies;
->>>>>>> 1b8cdc045b16b66973df527adcd1cfedf24da153
+        protected global::System.Web.UI.WebControls.Repeater rptMovieList;
     }
 }
