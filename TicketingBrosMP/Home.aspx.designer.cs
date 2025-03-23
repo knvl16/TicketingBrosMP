@@ -15,6 +15,15 @@ namespace TicketingBrosMP
     {
 
         /// <summary>
+        /// pnlNowShowing control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel pnlNowShowing;
+
+        /// <summary>
         /// rptNowShowing control.
         /// </summary>
         /// <remarks>
@@ -24,6 +33,24 @@ namespace TicketingBrosMP
         protected global::System.Web.UI.WebControls.Repeater rptNowShowing;
 
         /// <summary>
+        /// pnlNoNowShowing control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel pnlNoNowShowing;
+
+        /// <summary>
+        /// pnlUpcoming control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel pnlUpcoming;
+
+        /// <summary>
         /// rptUpcomingMovies control.
         /// </summary>
         /// <remarks>
@@ -31,5 +58,14 @@ namespace TicketingBrosMP
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Repeater rptUpcomingMovies;
+
+        /// <summary>
+        /// pnlNoUpcoming control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel pnlNoUpcoming;
     }
 }

@@ -11,34 +11,34 @@ namespace TicketingBrosMP
 {
 
 
-    public partial class CancelReservation
+    public partial class RecentTicketCancellation
     {
 
         /// <summary>
-        /// pnlNoReservations control.
+        /// pnlNoTickets control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel pnlNoReservations;
+        protected global::System.Web.UI.WebControls.Panel pnlNoTickets;
 
         /// <summary>
-        /// rptReservations control.
+        /// rptRecentTickets control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rptReservations;
+        protected global::System.Web.UI.WebControls.Repeater rptRecentTickets;
 
         /// <summary>
-        /// btnCancelReservation control.
+        /// btnCancelTickets control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnCancelReservation;
+        protected global::System.Web.UI.WebControls.Button btnCancelTickets;
     }
 }
