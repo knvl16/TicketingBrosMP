@@ -23,14 +23,16 @@ namespace TicketingBrosMP
             {
                 lblErrorMessage.Text = "Please fill in all fields.";
                 lblErrorMessage.Visible = true;
+                lblSuccessMessage.Visible = false;
                 return;
             }
 
-            // Email validation
+
             if (!IsValidEmail(newEmail))
             {
                 lblErrorMessage.Text = "Please enter a valid email address.";
                 lblErrorMessage.Visible = true;
+                lblSuccessMessage.Visible = false;
                 return;
             }
 
@@ -38,22 +40,25 @@ namespace TicketingBrosMP
             {
                 lblErrorMessage.Text = "Passwords do not match.";
                 lblErrorMessage.Visible = true;
+                lblSuccessMessage.Visible = false;
                 return;
             }
 
-            // Password validation
+
             if (!IsValidPassword(newPassword))
             {
                 lblErrorMessage.Text = "Password must be at least 8 characters long and contain at least one uppercase letter, one lowercase letter, one number, and one special character.";
                 lblErrorMessage.Visible = true;
+                lblSuccessMessage.Visible = false;
                 return;
             }
 
-            //Username validation
+
             if (!IsValidUsername(newUsername))
             {
                 lblErrorMessage.Text = "Username must be between 3 and 20 characters long and contain only alphanumeric characters and underscores.";
                 lblErrorMessage.Visible = true;
+                lblSuccessMessage.Visible = false;
                 return;
             }
 
@@ -65,7 +70,7 @@ namespace TicketingBrosMP
                 {
                     connection.Open();
 
-                    // Check if the username already exists
+
                     string checkUsernameQuery = "SELECT COUNT(*) FROM Login_TBL WHERE [username] = ?";
                     using (OleDbCommand checkUsernameCommand = new OleDbCommand(checkUsernameQuery, connection))
                     {
@@ -75,11 +80,11 @@ namespace TicketingBrosMP
                         {
                             lblErrorMessage.Text = "Username already exists.";
                             lblErrorMessage.Visible = true;
+                            lblSuccessMessage.Visible = false;
                             return;
                         }
                     }
 
-                    // Check if the email already exists
                     string checkEmailQuery = "SELECT COUNT(*) FROM Login_TBL WHERE [email] = ?";
                     using (OleDbCommand checkEmailCommand = new OleDbCommand(checkEmailQuery, connection))
                     {
@@ -89,36 +94,45 @@ namespace TicketingBrosMP
                         {
                             lblErrorMessage.Text = "Email already exists.";
                             lblErrorMessage.Visible = true;
+                            lblSuccessMessage.Visible = false;
                             return;
                         }
                     }
 
-                    // Insert new user
+
                     string insertQuery = "INSERT INTO Login_TBL ([username], [password], [email]) VALUES (?, ?, ?)";
                     using (OleDbCommand insertCommand = new OleDbCommand(insertQuery, connection))
                     {
                         insertCommand.Parameters.AddWithValue("?", newUsername);
-                        insertCommand.Parameters.AddWithValue("?", newPassword); // Consider hashing the password
+                        insertCommand.Parameters.AddWithValue("?", newPassword);
                         insertCommand.Parameters.AddWithValue("?", newEmail);
 
                         insertCommand.ExecuteNonQuery();
-
-                        lblSuccessMessage.Text = "Sign up successful!";
-                        lblSuccessMessage.Visible = true;
-                        lblErrorMessage.Visible = false;
-
-                        // Clear the input fields
-                        txtEmail.Text = "";
-                        txtNewUsername.Text = "";
-                        txtNewPassword.Text = "";
-                        txtConfirmPassword.Text = "";
                     }
+
+
+                    Session["Username"] = newUsername;
+
+
+                    lblSuccessMessage.Text = "Account created successfully! Redirecting to home page...";
+                    lblSuccessMessage.Visible = true;
+                    lblErrorMessage.Visible = false;
+
+
+                    txtEmail.Text = "";
+                    txtNewUsername.Text = "";
+                    txtNewPassword.Text = "";
+                    txtConfirmPassword.Text = "";
+
+                    ScriptManager.RegisterStartupScript(this, GetType(), "redirectScript",
+                        "setTimeout(function() { window.location.href = 'Home.aspx'; }, 2000);", true);
                 }
             }
             catch (Exception ex)
             {
                 lblErrorMessage.Text = "An error occurred: " + ex.Message;
                 lblErrorMessage.Visible = true;
+                lblSuccessMessage.Visible = false;
             }
         }
 
@@ -130,14 +144,14 @@ namespace TicketingBrosMP
 
         private bool IsValidPassword(string password)
         {
-            // Password must be at least 8 characters long and contain at least one uppercase letter, one lowercase letter, one number, and one special character.
+
             string pattern = @"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^\da-zA-Z]).{8,}$";
             return Regex.IsMatch(password, pattern);
         }
 
         private bool IsValidUsername(string username)
         {
-            //Username must be between 3 and 20 characters long and contain only alphanumeric characters and underscores.
+
             string pattern = @"^[a-zA-Z0-9_]{3,20}$";
             return Regex.IsMatch(username, pattern);
         }

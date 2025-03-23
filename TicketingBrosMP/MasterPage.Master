@@ -16,15 +16,15 @@
     <asp:ContentPlaceHolder ID="head" runat="server"></asp:ContentPlaceHolder>
     <style>
         :root {
-            --primary-color: #800000;
-            --primary-hover: #CC3333;
+            --primary-color: #79642C;
+            --primary-hover: #6a5424;
             --text-light: #ffffff;
             --text-dark: #333333;
             --bg-light: #f8f9fa;
             --accent-color: #f8b400;
         }
 
-        /* General Layout */
+        
         html, body {
             height: 100%;
             margin: 0;
@@ -35,7 +35,7 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
-        /* Navbar Styling */
+        
         .navbar {
             background-color: var(--primary-color) !important;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -77,7 +77,7 @@
             background-color: rgba(121, 100, 44, 0.1);
         }
 
-        /* Main Content Styling */
+        
         .content-container {
             flex-grow: 1;
             display: flex;
@@ -87,7 +87,7 @@
             min-height: 60vh;
         }
 
-        /* Footer Styling */
+        
         footer {
             background-color: var(--primary-color) !important;
             color: var(--text-light);
@@ -131,7 +131,7 @@
             color: var(--primary-color) !important;
         }
 
-        /* Modal Styling */
+        
         .modal-content {
             border-radius: 1rem;
             box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.15);
@@ -260,19 +260,25 @@
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownBooking" role="button"
                                 data-bs-toggle="dropdown" aria-expanded="false">
-                                <i class="fas fa-ticket-alt me-1"></i>Book Tickets
+                                <i class="fas fa-ticket-alt me-1"></i>Buy Tickets
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdownBooking">
                                 <li>
-                                    <asp:HyperLink ID="hlBuyTickets" runat="server" NavigateUrl="~/BuyTickets.aspx"
+                                    <asp:HyperLink ID="hlBuyTickets" runat="server" NavigateUrl="~/BuyTickets2.aspx"
                                         CssClass="dropdown-item">
                                         <i class="fas fa-shopping-cart me-2"></i>Buy Tickets
                                     </asp:HyperLink>
                                 </li>
                                 <li>
+                                    <asp:HyperLink ID="hlMyBookings" runat="server" NavigateUrl="~/MyBookings.aspx"
+                                        CssClass="dropdown-item">
+                                        <i class="fas fa-list-alt me-2"></i>My Purchases
+                                    </asp:HyperLink>
+                                </li>
+                                <li>
                                     <asp:HyperLink ID="hlCancelReservation" runat="server"
                                         NavigateUrl="~/CancelReservation.aspx" CssClass="dropdown-item">
-                                        <i class="fas fa-ban me-2"></i>Cancel Reservation
+                                        <i class="fas fa-ban me-2"></i>Cancel Purchases
                                     </asp:HyperLink>
                                 </li>
                             </ul>
@@ -289,20 +295,27 @@
                                 <i class="fas fa-info-circle me-1"></i>About Us
                             </asp:HyperLink>
                         </li>
+                        <!-- Display Username First -->
+                        <li class="nav-item">
+                            <asp:Label ID="lblUsername" runat="server" CssClass="nav-link text-light"></asp:Label>
+                        </li>
+                        <!-- Logout elements -->
+                        <li class="nav-item" runat="server" Visible="false" ID="liLogout">
+                            <asp:Label ID="Label1" runat="server" CssClass="nav-link text-light"></asp:Label>
+                        </li>
+                        <li class="nav-item" runat="server" Visible="false" ID="liLogoutBtn">
+                            <asp:LinkButton ID="btnLogout" runat="server" CssClass="nav-link"
+                                OnClick="btnLogout_Click"
+                                OnClientClick="return confirm('Are you sure you want to logout?');">
+                                <i class="fas fa-sign-out-alt"></i> Logout
+                            </asp:LinkButton>
+                        </li>
+                        <!-- Login button remains for non-authenticated users -->
                         <li class="nav-item" id="liLogin" runat="server">
                             <button type="button" class="btn btn-outline-light nav-link" data-bs-toggle="modal"
                                 data-bs-target="#loginModal" title="Login">
                                 <i class="fas fa-user-circle"></i>
                             </button>
-                        </li>
-
-                        <li class="nav-item">
-                            <asp:Button ID="btnLogout" runat="server" CssClass="btn btn-outline-light nav-link"
-                                Text="Logout" OnClick="btnLogout_Click"
-                                OnClientClick="return confirm('Are you sure you want to logout?');" Visible="false" />
-                        </li>
-                        <li class="nav-item">
-                            <asp:Label ID="lblUsername" runat="server" CssClass="nav-link text-light"></asp:Label>
                         </li>
                     </ul>
                 </div>
@@ -414,19 +427,16 @@
                                         <i class="fas fa-home me-2"></i>Home
                                     </a>
                                 </li>
-                               
-
                                 <li class="nav-item">
-    <a class="nav-link" href="contact us.aspx">
-        <i class="fas fa-envelope me-2"></i>Contact Us
-    </a>
-</li>
-
+                                    <a class="nav-link" href="contact us.aspx">
+                                        <i class="fas fa-envelope me-2"></i>Contact Us
+                                    </a>
+                                </li>
                                 <li class="nav-item">
-    <a class="nav-link" href="about us.aspx">
-        <i class="fas fa-info-circle me-2"></i>About Us
-    </a>
-</li>
+                                    <a class="nav-link" href="about us.aspx">
+                                        <i class="fas fa-info-circle me-2"></i>About Us
+                                    </a>
+                                </li>
                             </ul>
                         </div>
                         <hr class="w-100 clearfix d-md-none" />
@@ -446,7 +456,7 @@
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="BuyTickets.aspx">
+                                    <a class="nav-link" href="BuyTickets2.aspx">
                                         <i class="fas fa-shopping-cart me-2"></i>Book A Ticket
                                     </a>
                                 </li>
@@ -469,7 +479,7 @@
                                 <i class="fas fa-envelope me-2"></i>TicketingBros@gmail.com
                             </p>
                             <p>
-                                <i class="fas fa-phone me-2"></i>+63 975 373 9876
+                                <i class="fas fa-phone me-2"></i>+63 932 555 6789
                             </p>
                         </div>
                     </div>
@@ -484,13 +494,13 @@
                             </div>
                         </div>
                         <div class="col-md-5 col-lg-4 ml-lg-0 text-center text-md-end">
-                            <a class="btn btn-outline-light btn-floating m-1 text-white" role="button">
+                            <a href="https://www.facebook.com" class="btn btn-outline-light btn-floating m-1 text-white" role="button">
                                 <i class="fab fa-facebook-f"></i>
                             </a>
-                            <a class="btn btn-outline-light btn-floating m-1 text-white" role="button">
+                            <a href="https://www.x.com" class="btn btn-outline-light btn-floating m-1 text-white" role="button">
                                 <i class="fab fa-x"></i>
                             </a>
-                            <a class="btn btn-outline-light btn-floating m-1 text-white" role="button">
+                            <a href="https://www.instagram.com" class="btn btn-outline-light btn-floating m-1 text-white" role="button">
                                 <i class="fab fa-instagram"></i>
                             </a>
                         </div>

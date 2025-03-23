@@ -24,6 +24,13 @@
             font-weight: bold;
             margin-bottom: 10px;
         }
+        .movie-title a {
+            color: inherit;
+            text-decoration: none;
+        }
+        .movie-title a:hover {
+            text-decoration: underline;
+        }
         .movie-meta { font-size: 16px; color: #666; margin-bottom: 5px; }
         .movie-description { margin-top: 15px; font-size: 16px; line-height: 1.6; }
         .cast-container { margin-top: 20px; }
@@ -51,6 +58,14 @@
             border-radius: 5px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
         }
+        .no-movies {
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            color: #888;
+            margin-top: 50px;
+            display: none;
+        }
     </style>
 </asp:Content>
 
@@ -62,40 +77,50 @@
             <ItemTemplate>
                 <div class="movie-container">
                     <span class="upcoming-badge">Upcoming</span>
-                    <!-- Movie Poster -->
-                    <img src='<%# Eval("PosterPath") %>' alt='<%# Eval("Title") %> Poster' class="movie-poster">
-                    
-                    <!-- Movie Details -->
+                    <img src='<%# Eval("PosterPath") %>' alt='<%# Eval("Title") %> Poster' class="movie-poster" />
                     <div class="movie-details">
-                        <div class="movie-title"><%# Eval("Title") %></div>
+                        <div class="movie-title">
+                            <a href='<%# GetUrl(Eval("ImdbLink").ToString()) %>' target="_blank">
+                                <%# Eval("Title") %>
+                            </a>
+                        </div>
                         <div class="movie-meta">Genre: <%# Eval("Genre") %> | Duration: <%# Eval("Duration") %></div>
                         <div class="movie-meta">Director: <%# Eval("Director") %></div>
                         <div class="movie-meta">Writer: <%# Eval("Writer") %></div>
                         <div class="movie-meta">
-                            <strong>Releasing On:</strong> <%# Eval("ShowingDate", "{0:MMMM dd, yyyy}") %> 
+                            <strong>Releasing On:</strong> <%# Eval("ShowingDate", "{0:MMMM dd, yyyy}") %>
                         </div>
                         <div class="movie-description"><%# Eval("Description") %></div>
-
-                        <!-- Cast Section -->
                         <div class="cast-container">
                             <div class="cast-title">Cast</div>
                             <div class="cast-list">
-                                <!-- First Cast Member -->
                                 <div class="cast-member">
-                                    <img src='<%# Eval("Cast1PhotoPath") %>' alt='<%# Eval("Cast1Name") %>' class="cast-photo">
+                                    <img src='<%# Eval("Cast1PhotoPath") %>' alt='<%# Eval("Cast1Name") %>' class="cast-photo" />
                                     <div class="cast-name"><%# Eval("Cast1Name") %></div>
                                 </div>
-                                <!-- Second Cast Member -->
                                 <div class="cast-member">
-                                    <img src='<%# Eval("Cast2PhotoPath") %>' alt='<%# Eval("Cast2Name") %>' class="cast-photo">
+                                    <img src='<%# Eval("Cast2PhotoPath") %>' alt='<%# Eval("Cast2Name") %>' class="cast-photo" />
                                     <div class="cast-name"><%# Eval("Cast2Name") %></div>
                                 </div>
                             </div>
                         </div>
-                        <!-- End Cast Section -->
                     </div>
                 </div>
             </ItemTemplate>
         </asp:Repeater>
+        
+        <asp:Panel ID="pnlNoMovies" runat="server" CssClass="no-movies">
+            No Upcoming Movies Available
+        </asp:Panel>
     </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var repeater = document.getElementById("<%= rptUpcomingMovies.ClientID %>");
+            var noMoviesPanel = document.getElementById("<%= pnlNoMovies.ClientID %>");
+            if (!repeater || repeater.innerHTML.trim() === "") {
+                noMoviesPanel.style.display = "block";
+            }
+        });
+    </script>
 </asp:Content>

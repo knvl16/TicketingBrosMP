@@ -69,6 +69,15 @@ namespace TicketingBrosMP
         protected global::System.Web.UI.WebControls.HyperLink hlBuyTickets;
 
         /// <summary>
+        /// hlMyBookings control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink hlMyBookings;
+
+        /// <summary>
         /// hlCancelReservation control.
         /// </summary>
         /// <remarks>
@@ -96,13 +105,40 @@ namespace TicketingBrosMP
         protected global::System.Web.UI.WebControls.HyperLink hlAbout;
 
         /// <summary>
-        /// liLogin control.
+        /// lblUsername control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl liLogin;
+        protected global::System.Web.UI.WebControls.Label lblUsername;
+
+        /// <summary>
+        /// liLogout control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl liLogout;
+
+        /// <summary>
+        /// Label1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label1;
+
+        /// <summary>
+        /// liLogoutBtn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl liLogoutBtn;
 
         /// <summary>
         /// btnLogout control.
@@ -111,16 +147,16 @@ namespace TicketingBrosMP
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnLogout;
+        protected global::System.Web.UI.WebControls.LinkButton btnLogout;
 
         /// <summary>
-        /// lblUsername control.
+        /// liLogin control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblUsername;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl liLogin;
 
         /// <summary>
         /// txtUsername control.
