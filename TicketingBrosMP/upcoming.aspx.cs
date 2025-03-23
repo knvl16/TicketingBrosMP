@@ -17,8 +17,15 @@ namespace TicketingBrosMP
 
         private void LoadUpcomingMovies()
         {
-            string connString = "Provider=Microsoft.ACE.OLEDB.16.0;Data Source=" + Server.MapPath("~/App_Data/TicketingBros.mdb");
-            string query = "SELECT Title, Genre, Duration, Director, Writer, Description, PosterPath, Cast1Name, Cast1PhotoPath, Cast2Name, Cast2PhotoPath, ShowingDate FROM Movies WHERE ShowingDate > Date() ORDER BY ShowingDate ASC";
+            string connString = "Provider=Microsoft.ACE.OLEDB.16.0;Data Source="
+                                + Server.MapPath("~/App_Data/TicketingBros.mdb");
+
+            string query = @"
+        SELECT Title, Genre, Duration, Director, Writer, Description, PosterPath, 
+               Cast1Name, Cast1PhotoPath, Cast2Name, Cast2PhotoPath, ShowingDate, ImdbLink 
+        FROM Movies 
+        WHERE ShowingDate > Date() 
+        ORDER BY ShowingDate ASC";
 
             try
             {
@@ -33,6 +40,11 @@ namespace TicketingBrosMP
                             {
                                 rptUpcomingMovies.DataSource = reader;
                                 rptUpcomingMovies.DataBind();
+                                pnlNoMovies.Visible = false; // Hide "No Movies" banner
+                            }
+                            else
+                            {
+                                pnlNoMovies.Visible = true; // Show "No Movies" banner
                             }
                         }
                     }
@@ -40,9 +52,20 @@ namespace TicketingBrosMP
             }
             catch (Exception ex)
             {
-                // Log the error (or display a message in a Label control if needed)
                 Response.Write("<script>alert('Error loading upcoming movies: " + ex.Message + "');</script>");
             }
+        }
+
+
+        public string GetUrl(string hyperlinkField)
+        {
+
+            string[] parts = hyperlinkField.Split('#');
+            if (parts.Length >= 2)
+            {
+                return parts[1];
+            }
+            return hyperlinkField;
         }
     }
 }

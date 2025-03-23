@@ -11,25 +11,34 @@ namespace TicketingBrosMP
 {
 
 
-    public partial class upcoming
+    public partial class MyBookings
     {
 
         /// <summary>
-        /// rptUpcomingMovies control.
+        /// gvBookings control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rptUpcomingMovies;
+        protected global::System.Web.UI.WebControls.GridView gvBookings;
 
         /// <summary>
-        /// pnlNoMovies control.
+        /// lblNoBookings control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel pnlNoMovies;
+        protected global::System.Web.UI.WebControls.Label lblNoBookings;
+
+        /// <summary>
+        /// btnReturnHome control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnReturnHome;
     }
 }
